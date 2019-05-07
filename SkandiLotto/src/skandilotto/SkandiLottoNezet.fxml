@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="350.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="skandilotto.SkandiLottoNezetController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="350.0" stroke="BLACK" strokeType="INSIDE" width="500.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0" startX="0.9857142857142857" startY="0.10952380952380952">
+               <stops>
+                  <Stop color="#e6e7e8" />
+                  <Stop color="#3559d0" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Pane id="basePane" fx:id="basePane" layoutY="-13.0" prefHeight="350.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox layoutX="29.0" layoutY="208.0" spacing="20.0">
+               <children>
+                  <Label id="label1" fx:id="label1" alignment="CENTER" layoutX="28.0" layoutY="58.0" prefHeight="40.0" prefWidth="46.0" />
+                  <Label id="label2" fx:id="label2" alignment="CENTER" layoutX="98.0" layoutY="58.0" prefHeight="40.0" prefWidth="46.0" />
+                  <Label id="label3" fx:id="label3" alignment="CENTER" layoutX="144.0" layoutY="58.0" prefHeight="40.0" prefWidth="46.0" />
+                  <Label id="label4" fx:id="label4" alignment="CENTER" layoutX="190.0" layoutY="58.0" prefHeight="40.0" prefWidth="46.0" />
+                  <Label id="label5" fx:id="label5" alignment="CENTER" layoutX="236.0" layoutY="58.0" prefHeight="40.0" prefWidth="46.0" />
+                  <Label id="label6" fx:id="label6" alignment="CENTER" layoutX="282.0" layoutY="58.0" prefHeight="40.0" prefWidth="46.0" />
+                  <Label id="label7" fx:id="label7" alignment="CENTER" layoutX="341.0" layoutY="58.0" prefHeight="40.0" prefWidth="46.0" />
+               </children>
+            </HBox>
+            <Label layoutX="172.0" layoutY="28.0" text="Skandináv Lottó">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="192.0" layoutY="69.0" text="Írj be 7 számot!">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Button fx:id="sorsolas" layoutX="208.0" layoutY="267.0" mnemonicParsing="false" onAction="#sorsolas" prefHeight="46.0" prefWidth="84.0" rotate="-0.0" text="Sorsolás!" />
+            <Label fx:id="resultLabel" alignment="CENTER" layoutX="138.0" layoutY="175.0" prefHeight="17.0" prefWidth="225.0" textAlignment="CENTER" />
+            <HBox layoutX="29.0" layoutY="108.0" spacing="20.0">
+               <children>
+                  <TextField fx:id="input1" layoutX="29.0" layoutY="109.0" prefHeight="40.0" prefWidth="46.0" />
+                  <TextField fx:id="input2" layoutX="88.0" layoutY="109.0" prefHeight="40.0" prefWidth="46.0" />
+                  <TextField fx:id="input3" layoutX="149.0" layoutY="109.0" prefHeight="40.0" prefWidth="46.0" />
+                  <TextField fx:id="input4" layoutX="208.0" layoutY="109.0" prefHeight="40.0" prefWidth="46.0" />
+                  <TextField fx:id="input5" layoutX="269.0" layoutY="109.0" prefHeight="40.0" prefWidth="46.0" />
+                  <TextField fx:id="input6" layoutX="328.0" layoutY="109.0" prefHeight="40.0" prefWidth="46.0" />
+                  <TextField fx:id="input7" layoutX="392.0" layoutY="109.0" prefHeight="40.0" prefWidth="46.0" />
+               </children>
+            </HBox>
+            <Button id="tableButton" fx:id="tableButton" layoutX="29.0" layoutY="278.0" mnemonicParsing="false" onAction="#tableSwitch" text="Táblázat" />
+         </children>
+      </Pane>
+      <Pane id="alertPane" fx:id="alertPane" layoutX="8.0" layoutY="8.0" prefHeight="350.0" prefWidth="500.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#eb7087" height="98.0" layoutX="65.0" layoutY="131.0" stroke="BLACK" strokeType="INSIDE" width="370.0" />
+            <Label id="alertLabel" fx:id="alertLabel" alignment="CENTER" layoutX="55.0" layoutY="110.0" prefHeight="98.0" prefWidth="390.0" text="Label" />
+            <Button id="alertButton" fx:id="alertButton" layoutX="232.0" layoutY="181.0" mnemonicParsing="false" onAction="#alertButtonAction" text="OK" />
+         </children>
+      </Pane>
+      <Pane id="tablePane" fx:id="tablePane" layoutX="8.0" layoutY="14.0" prefHeight="350.0" prefWidth="500.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TableView fx:id="genNumTable" fixedCellSize="-2.0" prefHeight="290.0" prefWidth="500.0" />
+            <Button id="visszaButton" fx:id="visszaButton" layoutX="224.0" layoutY="302.0" mnemonicParsing="false" onAction="#visszaMain" text="Vissza" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
